@@ -6,7 +6,7 @@ partial class Program
     {
         DateTime currentDateTime = DateTime.Now;
         
-        Console.WriteLine("---------------------------- Welcome to Easy Journal-------------------------------");
+        Console.WriteLine("---------------------------- Welcome to Journal-------------------------------");
         Console.WriteLine("         What can I do for you today(select the option by it number)                             ");
         Console.WriteLine("");
         //Initiating the Journal object

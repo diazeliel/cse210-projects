@@ -13,14 +13,6 @@ public class Journal
 
     public string fileAccessName (string fileName)
     {
-        /// <summary>
-        /// This method takes filename as an input from the user,
-        /// removes all whitespace and replace it with an '_' underscore.
-        /// </summary>
-        /// <param name="fileName">the fileName to store the entry</param>
-        /// <returns> A string with an underscore '_'</returns>
-
-
         _fileName = fileName;
         txtName = _fileName.Replace(" ", "_").ToLower();
         _filePath += txtName;
@@ -31,15 +23,6 @@ public class Journal
     // Creating the methods for the journal class.
     public string Entry ( string prompt, string fileN = "")
     {
-        /// <summary>
-        /// The Entry method saves the prompt, date, and the user response in a file.
-        /// It displays the prompt recieved from Display class in the main Program,
-        /// and stores the users response and saves it.
-        /// </summary>
-        /// <param name="fileN">the fileName or directory to save the journal in <typeparam name="String">a String</typeparam></param>
-        /// <param name="prompt">the prompt/questioned to display to the user <typeparam name="String">a String</typeparam></param>
-        /// <returns> It returns the file path to be used by other methods. <typeparam name="String">a String</typeparam> </returns>
-        
         using(StreamWriter outputFile = new StreamWriter($"{fileN}.txt"))
         {
             Console.WriteLine(prompt);
@@ -52,16 +35,7 @@ public class Journal
     }
 
     private void Save (string content, string [] file, int option)
-    {
-        /// <summary>
-        /// This private method, saves the journal content and gives the user
-        /// a choice to save or not save the entry.
-        /// </summary>
-        /// <param name="content">the content to save. <typeparam name="String">a String</typeparam></param>
-        /// <param name="file"> a list of strings - the list of files in the journal folder <typeparam name="string[]">a list of string</typeparam></param>
-        /// <param name="option"> the option from the user on which file to save the content <typeparam name="int"> an integer</typeparam></param>
-        /// <returns> returns none </returns>
-        
+    {           
         string choice = "q";
         do
         {
@@ -71,13 +45,13 @@ public class Journal
             if (choice == "y")
             {
                 File.AppendAllText(file[option - 1], $"{content}");
-                Console.WriteLine("\nYour entry has been saved 📥");
+                Console.WriteLine("\nYour entry has been saved");
                 break;
             } 
             else if (choice == "n")
             {  
                 File.AppendAllText(file[option - 1], $"\n{content}");
-                Console.WriteLine("\nLet's go 🚵🏼‍♀️:\n");
+                Console.WriteLine("\nLet's go:\n");
                 content = Console.ReadLine();
             }
         } while (choice != "q");
@@ -85,14 +59,7 @@ public class Journal
     }
     public void Continue (string prompt)
     {
-        // <summary>
-        /// This method takes care of the user's choice to continue journaling.
-        /// Makes use of the display class to display current files saved for the 
-        /// user to choice from.
-        /// </summary>
-        /// <param name="prompt">the prompt to display to the user <typeparam name="String">a String</typeparam></param>
-        /// <returns> returns none </returns>
-
+        
         string thePrompt = prompt;
 
         Display display = new();
