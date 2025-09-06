@@ -8,7 +8,7 @@ class Program
         string input = Console.ReadLine();
         int grade = int.Parse(input);
 
-        string letter = " ";
+        string letter = "";
 
         if (grade >= 90)
         {
