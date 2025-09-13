@@ -25,7 +25,7 @@ class Program
                     Console.WriteLine(randomPrompt);
                     Console.WriteLine("Enter your entry:");
                     string newEntryText = Console.ReadLine();
-                    Entry newEntry = new Entry(DateTime.Now.ToString(), "Custom Prompt", newEntryText);
+                    Entry newEntry = new Entry(DateTime.Now.ToString(), randomPrompt, newEntryText);
                     journal.AddEntry(newEntry);
                     break;
                 case "2":
@@ -42,7 +42,7 @@ class Program
                     journal.SaveToFile(saveFileName);
                     break;
                 case "5":
-                    Console.WriteLine("Don't forget to write later... Remember YOU ARE AMAZING !!");
+                    Console.WriteLine("Don't forget to write later.");
                     return;
                 default:
                     Console.WriteLine("Invalid choice. Please try again.");
