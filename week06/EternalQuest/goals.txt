@@ -1,0 +1,3 @@
+0,1
+SimpleGoal|read scripture everyday at 5am|read scriptures|20|False
+NegativeGoal|lose weight|better health|-50
